@@ -3,7 +3,7 @@
 /**
  * push - Pushes a new element onto the stack
  * @stack: Pointer to the stack
- * @value: Value to be pushed onto the stack
+ * @value: ..
  */
 void push(stack_t **stack, int value)
 {
