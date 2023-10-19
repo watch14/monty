@@ -84,30 +84,3 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	free(top);
 }
-
-/**
- * check_op - Checks and performs the appropriate stack operation on opcode
- * @stack: Pointer to the stack
- * @opcode: Opcode to be executed
- * @value: Value associated with the opcode
- * @line_number: Line number for error handling (not used)
- */
-void check_op(stack_t **stack, char *opcode, int value, int line_number)
-{
-	if (strcmp(opcode, "push") == 0)
-	{
-		push(stack, value);
-	}
-	else if (strcmp(opcode, "pall") == 0)
-	{
-		pall(stack, line_number);
-	}
-	else if (strcmp(opcode, "pint") == 0)
-	{
-		pint(stack, line_number);
-	}
-	else if (strcmp(opcode, "pop") == 0)
-	{
-		pop(stack, line_number);
-	}
-}
