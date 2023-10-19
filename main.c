@@ -14,15 +14,15 @@ int main(int argc, char *argv[])
 	stack_t *stack = NULL;
 	char buffer[128];
 
+	if (!file)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", filename);
+		return (EXIT_FAILURE);
+	}	
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
-		return (EXIT_FAILURE);
-	}
-
-	if (!file)
-	{
-		fprintf(stderr, "Error: Unable to open file %s\n", filename);
 		return (EXIT_FAILURE);
 	}
 
