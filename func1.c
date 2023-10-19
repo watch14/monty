@@ -39,7 +39,7 @@ void pall(stack_t **stack, unsigned int line_number)
 	while (current)
 	{
 		if (current->n != INT_MIN)
-	       	{
+		{
 			printf("%d\n", current->n);
 		}
 		else
