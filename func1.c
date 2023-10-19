@@ -111,4 +111,3 @@ void check_op(stack_t **stack, char *opcode, int value, int line_number)
 		pop(stack, line_number);
 	}
 }
-
