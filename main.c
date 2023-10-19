@@ -9,37 +9,37 @@
 
 int main(int argc, char *argv[])
 {
-        const char *filename = argv[1];
-        FILE *file = fopen(filename, "r");
-        stack_t *stack = NULL;
-        char buffer[128];
+	const char *filename = argv[1];
+	FILE *file = fopen(filename, "r");
+	stack_t *stack = NULL;
+	char buffer[128];
 
-	 if (!file)
-        {
-                fprintf(stderr, "Error: Unable to open file %s\n", filename);
-                return (EXIT_FAILURE);
-        }
+	if (!file)
+	{
+		fprintf(stderr, "Error: Unable to open file %s\n", filename);
+		return (EXIT_FAILURE);
+	}
 
-        if (argc != 2)
-        {
-                fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
-                return (EXIT_FAILURE);
-        }
+	if (argc != 2)
+	{
+		fprintf(stderr, "Usage: %s <filename>\n", argv[0]);
+		return (EXIT_FAILURE);
+	}
 
-        while (fgets(buffer, sizeof(buffer), file))
-        {
-                char *opcode = strtok(buffer, " \t\n$");
+	while (fgets(buffer, sizeof(buffer), file))
+	{
+		char *opcode = strtok(buffer, " \t\n$");
 
-                if (opcode)
-                {
-                        char *value_str = strtok(NULL, " \t\n$");
-                        int value = value_str ? atoi(value_str) : 0;
+		if (opcode)
+		{
+			char *value_str = strtok(NULL, " \t\n$");
+			int value = value_str ? atoi(value_str) : 0;
 
-                        check_op(&stack, opcode, value, 0);
-                }
-        }
+			check_op(&stack, opcode, value, 0);
+		}
+	}
 
-        fclose(file);
+	fclose(file);
 
-        return (0);
+	return (0);
 }
