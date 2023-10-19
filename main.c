@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", filename);
 		return (EXIT_FAILURE);
-	}	
+	}
 
 	if (argc != 2)
 	{
