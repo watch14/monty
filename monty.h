@@ -41,7 +41,7 @@ void check_op(stack_t **stack, char *opcode, int value, int line_number);
 void push(stack_t **stack, int value);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
-
+void pop(stack_t **stack, unsigned int line_number);
 
 
 
