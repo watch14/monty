@@ -38,21 +38,16 @@ void pall(stack_t **stack, unsigned int line_number)
 
 	while (current)
 	{
-		if (current->n != INT_MIN)
+		if (!current->n && current->n != 0)
 		{
-			printf("%d\n", current->n);
-		}
-		else
-		{
-			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
+		printf("%d\n", current->n);
 		current = current->next;
 	}
-
 	(void)line_number;
 }
-
 
 /**
  * pint - Prints the top value in the stack
