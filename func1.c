@@ -5,17 +5,9 @@
  * @stack: Pointer to the stack
  * @value: Value to be pushed onto the stack
  */
-void push(stack_t **stack, unsigned int line_number)
+void push(stack_t **stack, int value)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
-	char *value_str = strtok(NULL, " \t\n$");
-	int value = value_str ? atoi(value_str) : 0;
-
-	if (value == 0 && strcmp(value_str, "0") != 0)
-	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		exit(EXIT_FAILURE);
-	}
 
 	if (!new_node)
 	{
